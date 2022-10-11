@@ -17,5 +17,8 @@ public class Stock {
     @Id
     private String stockCode;
     private Float stockPrice;
-    private Date lastStockPriceUpdateTime;
+    private Float averagePrice;
+    private Date lastStockPriceUpdatedDate;
+    private Date lastAveragePriceCalculatedDate;
+    private Date creationDate;
 }
