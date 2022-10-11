@@ -24,14 +24,15 @@ public class PricesUpdaterJob implements Job {
                 .addHeader("X-RapidAPI-Host", "alpha-vantage.p.rapidapi.com")
                 .build();
 
-        try {
+        LOGGER.info("-------------------> TEST <-------------------");
+        /*try {
             LOGGER.info("-------------------> TEST <-------------------");
             Response response = client.newCall(request).execute();
             String bodyResponse = response.body().string();
             LOGGER.info(bodyResponse);
         } catch (IOException e) {
             throw new RuntimeException(e);
-        }
+        }*/
     }
 
 }
