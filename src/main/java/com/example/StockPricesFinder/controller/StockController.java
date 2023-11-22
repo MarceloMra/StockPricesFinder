@@ -1,36 +1,36 @@
 package com.example.StockPricesFinder.controller;
 
 import com.example.StockPricesFinder.model.Stock;
-import com.example.StockPricesFinder.service.StockPricesService;
+import com.example.StockPricesFinder.service.StockService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/Prices")
-public class PricesController {
+@RequestMapping("/Stock")
+public class StockController {
 
     @Autowired
-    private StockPricesService stockPricesService;
+    private StockService stockService;
 
     @GetMapping
     public List<Stock> findAllStocks(){
-        return stockPricesService.findAll();
+        return stockService.findAll();
     }
 
     @GetMapping("/{stockCode}")
     public Stock findStockByCode(@PathVariable String stockCode){
-        return stockPricesService.findByStockCode(stockCode);
+        return stockService.findByStockCode(stockCode);
     }
 
     @PostMapping
     public Stock createStock(@RequestBody Stock stock){
-        return stockPricesService.saveStock(stock);
+        return stockService.saveStock(stock);
     }
 
-    @DeleteMapping("/{stockCode}")
-    public void deleteStock(@PathVariable String stockCode){
-        stockPricesService.deleteByStockCode(stockCode);
+    @DeleteMapping("/{stockSymbol}")
+    public void deleteStock(@PathVariable String stockSymbol){
+        stockService.deleteByStockSymbol(stockSymbol);
     }
 }

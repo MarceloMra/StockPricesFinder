@@ -32,7 +32,7 @@ public class QuartzJobsUtils {
         return TriggerBuilder.newTrigger().forJob(pricesUpdaterJobDetail())
                 .withIdentity("Prices_Updater_Job_Trigger")
                 .withDescription("Sample trigger")
-                .withSchedule(simpleSchedule().repeatForever().withIntervalInSeconds(10))
+                .withSchedule(simpleSchedule().repeatForever().withIntervalInMinutes(30))
                 .build();
     }
 

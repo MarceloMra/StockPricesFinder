@@ -1,5 +1,6 @@
 package com.example.StockPricesFinder.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,13 +13,15 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Document
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Stock {
 
     @Id
-    private String stockCode;
-    private Float stockPrice;
-    private Float averagePrice;
+    private String id;
+    private String symbol;
+    private Float regularMarketPrice;
+    private String shortName;
+    private String longName;
     private Date lastStockPriceUpdatedDate;
-    private Date lastAveragePriceCalculatedDate;
     private Date creationDate;
 }

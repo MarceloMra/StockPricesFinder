@@ -8,5 +8,5 @@ public interface StockPrices {
     public List<Stock> findAll();
     public Stock findByStockCode(String stockCode);
     public Stock saveStock(Stock stock);
-    public void deleteByStockCode(String stockCode);
+    public void deleteByStockSymbol(String stockSymbol);
 }

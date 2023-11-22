@@ -10,7 +10,7 @@ import java.util.Date;
 import java.util.List;
 
 @Service
-public class StockPricesService implements StockPrices {
+public class StockService implements StockPrices {
 
     @Autowired
     private StockRepository stockRepository;
@@ -31,7 +31,7 @@ public class StockPricesService implements StockPrices {
     @Override
     public Stock saveStock(Stock stock) {
         try {
-            Stock searchedStock = findByStockCode(stock.getStockCode());
+            Stock searchedStock = findByStockCode(stock.getSymbol());
             setImmutableStockFieldsToKeepThemPersisted(stock, searchedStock);
         } catch (IllegalArgumentException e){
             stock.setCreationDate(new Date());
@@ -41,8 +41,8 @@ public class StockPricesService implements StockPrices {
     }
 
     @Override
-    public void deleteByStockCode(String stockCode) {
-        this.stockRepository.deleteById(stockCode);
+    public void deleteByStockSymbol(String stockSymbol) {
+        this.stockRepository.deleteBySymbol(stockSymbol);
     }
 
     private void setImmutableStockFieldsToKeepThemPersisted(Stock stock, Stock searchedStock) {
