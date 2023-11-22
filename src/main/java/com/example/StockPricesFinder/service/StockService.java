@@ -1,7 +1,7 @@
 package com.example.StockPricesFinder.service;
 
 import com.example.StockPricesFinder.interfaces.StockPrices;
-import com.example.StockPricesFinder.interfaces.StockRepository;
+import com.example.StockPricesFinder.repository.StockRepository;
 import com.example.StockPricesFinder.model.Stock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -1,4 +1,4 @@
-package com.example.StockPricesFinder.interfaces;
+package com.example.StockPricesFinder.repository;
 
 import com.example.StockPricesFinder.model.Stock;
 import org.springframework.data.mongodb.repository.MongoRepository;
